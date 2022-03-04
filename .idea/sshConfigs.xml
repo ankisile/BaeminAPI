@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig host="3.35.229.59" id="d149a402-b7c5-4b1b-adc2-d6bbcec55824" keyPath="C:\Users\송민영\Downloads\awsKey_ubuntu1804.pem" port="22" nameFormat="DESCRIPTIVE" username="ubuntu" />
+    </configs>
+  </component>
+</project>
