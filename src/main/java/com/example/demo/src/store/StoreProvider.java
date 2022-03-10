@@ -51,5 +51,41 @@ public class StoreProvider {
             throw new BaseException(DATABASE_ERROR);
         }
     }
+    public GetStoreInfoRes getStoreInfos(int storeId) throws BaseException {
+        try{
+            GetStoreInfoRes getStoreInfoRes = storeDao.getStoreInfos(storeId);
+            return getStoreInfoRes;
+        } catch (Exception exception) {
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
+
+    public List<MenuCategory> getMenuCategories(int storeId) throws BaseException {
+        try {
+            List<MenuCategory> menuCategoryList = storeDao.getMenuCategories(storeId);
+            for (MenuCategory menuCategory : menuCategoryList) {
+                menuCategory.setMenuList(storeDao.getMenus(menuCategory.getMenuCategoryId()));
+            }
+            return menuCategoryList;
+        } catch (Exception exception) {
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
+
+
+
+
+    public List<Review> getStoreReviews(int storeId) throws BaseException {
+        try {
+            List<Review> reviewList = storeDao.getStoreReviews(storeId);
+            for (Review review : reviewList) {
+                review.setReviewImgList(storeDao.getReviewImgs(review.getReviewId()));
+                review.setReviewMenuList(storeDao.getReviewMenus(review.getReviewId()));
+            }
+            return reviewList;
+        } catch (Exception exception) {
+            throw new BaseException(DATABASE_ERROR);
+        }
+    }
 
 }

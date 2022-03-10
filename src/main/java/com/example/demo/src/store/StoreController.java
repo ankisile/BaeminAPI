@@ -80,4 +80,86 @@ public class StoreController {
         }
     }
 
+    /**
+     * 특정 매장 화면 - 매장 정보 API
+     * [GET] /stores/:storeId
+     * @return BaseResponse<GetStoreInfosRes>
+     */
+    @ResponseBody
+    @GetMapping("/{storeId}")
+    public BaseResponse<GetStoreInfoRes> getStoreInfo(@PathVariable(required = false) String storeId) {
+        if(storeId == null){
+            return new BaseResponse<>(EMPTY_PATH_VARIABLE);
+        }
+        try {
+            if(!isRegexInteger(storeId)){
+                return new BaseResponse<>(INVAILD_PATH_VARIABLE);
+            }
+            int id = Integer.parseInt(storeId);
+            if(storeProvider.checkStoreId(id) == 0){
+                return new BaseResponse<>(INVALID_STORE_ID);
+            }
+            GetStoreInfoRes getStoreInfoRes = storeProvider.getStoreInfos(id);
+            return new BaseResponse<>(getStoreInfoRes);
+        } catch (BaseException exception) {
+            return new BaseResponse<>((exception.getStatus()));
+        }
+    }
+
+    /**
+     * 특정 매장 화면 - 메뉴목록 API
+     * [GET] /stores/:storeId/menus
+     * @return BaseResponse<GetStoreMenuRes>
+     */
+    @ResponseBody
+    @GetMapping("/{storeId}/menus")
+    public BaseResponse<GetStoreMenuRes> getStoreMenu(@PathVariable(required = false) String storeId) {
+        if(storeId == null){
+            return new BaseResponse<>(EMPTY_PATH_VARIABLE);
+        }
+        try {
+            if(!isRegexInteger(storeId)){
+                return new BaseResponse<>(INVAILD_PATH_VARIABLE);
+            }
+            int id = Integer.parseInt(storeId);
+            if(storeProvider.checkStoreId(id) == 0){
+                return new BaseResponse<>(INVALID_STORE_ID);
+            }
+            GetStoreMenuRes getStoreMenuRes = new GetStoreMenuRes(id);
+            getStoreMenuRes.setMenuCategoryList(storeProvider.getMenuCategories(id));
+            return new BaseResponse<>(getStoreMenuRes);
+        } catch (BaseException exception) {
+            return new BaseResponse<>((exception.getStatus()));
+        }
+    }
+
+    /**
+     * 특정 매장 화면 - 매장 리뷰 API
+     * [GET] /stores/:storeId/reviews
+     * @return BaseResponse<List<GetStoreReviewRes>>
+     */
+    @ResponseBody
+    @GetMapping("/{storeId}/reviews")
+    public BaseResponse<GetStoreReviewRes> getStoreReviews(@PathVariable(required = false) String storeId) {
+        if(storeId == null){
+            return new BaseResponse<>(EMPTY_PATH_VARIABLE);
+        }
+        try {
+            if(!isRegexInteger(storeId)){
+                return new BaseResponse<>(INVAILD_PATH_VARIABLE);
+            }
+            int id = Integer.parseInt(storeId);
+            if(storeProvider.checkStoreId(id) == 0){
+                return new BaseResponse<>(INVALID_STORE_ID);
+            }
+            GetStoreReviewRes getStoreReviewRes = new GetStoreReviewRes(id);
+            getStoreReviewRes.setReviewList(storeProvider.getStoreReviews(id));
+            return new BaseResponse<>(getStoreReviewRes);
+        } catch (BaseException exception) {
+            return new BaseResponse<>((exception.getStatus()));
+        }
+    }
+
+
+
 }

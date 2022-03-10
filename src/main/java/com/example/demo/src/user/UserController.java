@@ -40,7 +40,6 @@ public class UserController {
      * [POST] /users
      * @return BaseResponse<PostUserRes>
      */
-    // Body
     @ResponseBody
     @PostMapping("")
     public BaseResponse<PostUserRes> createUser(@RequestBody PostUserReq postUserReq) throws BaseException {
@@ -126,7 +125,7 @@ public class UserController {
     }
 
 
-
+//
 //    /**
 //     * 회원 1명 조회 API
 //     * [GET] /users/:userIdx
@@ -145,8 +144,8 @@ public class UserController {
 //        }
 //
 //    }
-//
-//
+
+
 
 //
 //    /**

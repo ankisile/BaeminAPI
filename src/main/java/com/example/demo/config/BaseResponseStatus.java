@@ -20,6 +20,7 @@ public enum BaseResponseStatus {
     INVAILD_PATH_VARIABLE(false, 2006, "올바르지 않은 PathVariable 형식입니다."),
     EMPTY_PATH_VARIABLE(false, 2004, "PathVariable를 입력해주세요."),
     INVAILD_QUERY_PARAMS(false, 2007, "올바르지 않은 Query Params 형식입니다."),
+    EMPTY_QUERY_PARAMS(false, 2008, "Query Params를 입력해주세요."),
 
 
     // [POST] /users
@@ -33,7 +34,6 @@ public enum BaseResponseStatus {
     POST_USERS_EMPTY_PHONE(false, 2022, "휴대폰 번호를 입력해주세요."),
     POST_USERS_INVALID_PHONE(false, 2023, "휴대폰 번호를 확인해주세요."),
 
-    INVALID_STORE_ID(false, 3021, "올바르지 않은 storeId 입니다."),
 
 
     POST_USERS_EMPTY_ADDRESS(false, 2030, "주소를 입력하세요."),
@@ -43,6 +43,55 @@ public enum BaseResponseStatus {
     // users
     USERS_EMPTY_USER_ID(false, 2010, "유저 아이디 값을 확인해주세요."),
 
+    POST_LIKES_EMPTY_STORE_ID(false, 2060, "storeId를 입력하세요."),
+    EMPTY_LIKES(false, 3029, "찜이 없습니다. 좋아하는 맛집에 ♥를 눌러주세요."),
+
+
+    // [GET] /menus/:menuId/price?count=
+    INVALID_MENU_COUNT(false, 3023, "올바르지 않은 count 입니다."),
+
+
+    POST_CARTS_EMPTY_MENU_ID(false, 2040, "menuId를 입력하세요."),
+    POST_CARTS_EMPTY_COUNT(false, 2041, "count를 입력하세요."),
+    POST_CARTS_INVALID_MENU_ID(false, 2042, "1이상의 menuId를 입력하세요."),
+    POST_CARTS_INVALID_COUNT(false, 2043, "1이상의 count를 입력하세요."),
+    POST_CARTS_DIFFERENT_STORE(false, 2044, "같은 가게의 메뉴만 담을 수 있습니다."),
+
+    // [DELETE] /carts/:cartMenuId
+    DELETE_CARTS_INVALID_CART_MENU_ID(false, 2045, "1이상의 cartMenuId를 입력하세요."),
+
+    // [GET] /carts/payments/:accountId
+    GET_CARTS_INVALID_ACCOUNT_ID(false, 2046, "1이상의 accountId를 입력하세요."),
+
+    // [GET] [PATCH] /carts/:menuId
+    INVALID_MENU_ID(false, 3022, "올바르지 않은 menuId 입니다."),
+
+
+    // [DELETE] /carts/:cartMenuId
+    INVALID_CART_MENU_ID(false, 3024, "올바르지 않은 cartMenuId 입니다."),
+
+    // [POST] /orders
+    INSUFFICIENT_BALANCE(false, 3025, "잔액이 부족합니다."),
+
+    INVALID_COUPON_ID(false, 3026, "사용 불가능한 쿠폰입니다."),
+    NOT_EXISTS_ACCOUNT_ID(false, 3027, "존재하지 않는 계좌입니다."),
+    EMPTY_CARTS(false, 3028, "장바구니가 비어있습니다."),
+
+    // [POST] /reviews
+    INVALID_ORDER_INFO_ID(false, 3030, "올바르지 않은 orderInfoId 입니다."),
+    EXISTS_REVIEW(false, 3031, "이미 리뷰가 존재합니다."),
+    INVALID_ORDER_INFO_MENU_ID(false, 3032, "올바르지 않은 orderInfoMenuId 입니다."),
+
+    // [DELETE] /users/reviews/:reviewId
+    INVALID_REVIEW_ID(false, 3040, "올바르지 않은 reviewId 입니다."),
+    EMPTY_REVIEW(false, 3041, "리뷰가 없습니다"),
+    DELETE_REVIEWS_INVALID_REVIEW_ID(false, 3042, "1이상의 reviewId를 입력하세요."),
+
+
+    // [POST] /reviews
+    POST_REVIEWS_EMPTY_ORDER_INFO_ID(false, 2070, "orderInfoId를 입력하세요."),
+    POST_REVIEWS_EMPTY_DESCRIPTION(false, 2071, "reviewDescription을 입력하세요."),
+    POST_REVIEWS_INVALID_SCORE(false, 2072, "1이상 5이하의 reviewScore를 입력하세요."),
 
     /**
      * 3000 : Response 오류
@@ -57,6 +106,8 @@ public enum BaseResponseStatus {
 
 
     INVALID_ADDRESS_ID(false, 3020, "올바르지 않은 addressId 입니다."),
+
+    INVALID_STORE_ID(false, 3021, "올바르지 않은 storeId 입니다."),
 
 
 
