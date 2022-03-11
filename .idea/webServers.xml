@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="0abbaa8e-3633-48cf-91d1-b82e9eeb9042" name="spring-edu" url="https://www.isileeserver.shop">
-        <fileTransfer rootFolder="/var/www/api-server-spring-boot-final" accessType="SFTP" host="3.35.229.59" port="22" sshConfigId="d149a402-b7c5-4b1b-adc2-d6bbcec55824" sshConfig="ubuntu@3.35.229.59:22 key" keyPair="true">
+        <fileTransfer rootFolder="/var/www/api-server-spring-boot-final" accessType="SFTP" host="52.78.0.40" port="22" sshConfigId="d149a402-b7c5-4b1b-adc2-d6bbcec55824" sshConfig="ubuntu@52.78.0.40:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
