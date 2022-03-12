@@ -159,23 +159,7 @@ public class CartProvider {
             throw new BaseException(DATABASE_ERROR);
         }
     }
-//
-//    public int checkBalanceWithCoupon(int userId, int accountId, int totalPrice, int couponId) throws BaseException {
-//        try {
-//            return cartDao.checkBalanceWithCoupon(userId, accountId, totalPrice, couponId);
-//        } catch (Exception exception) {
-//            throw new BaseException(DATABASE_ERROR);
-//        }
-//    }
-//
-//    public int checkBalance(int userId, int accountId, int totalPrice) throws BaseException {
-//        try {
-//            return cartDao.checkBalance(userId, accountId, totalPrice);
-//        } catch (Exception exception) {
-//            throw new BaseException(DATABASE_ERROR);
-//        }
-//    }
-//
+
     public String getUserAddress(int userId) throws BaseException{
         try {
             return cartDao.getUserAddress(userId);
@@ -184,15 +168,6 @@ public class CartProvider {
         }
     }
 
-//
-//    public String getPaymentMethod(int userId, int accountId) throws BaseException{
-//        try {
-//            return cartDao.getPaymentMethod(userId, accountId);
-//        } catch (Exception exception) {
-//            throw new BaseException(DATABASE_ERROR);
-//        }
-//    }
-//
     public List<CartMenus> cartMenusList(int userId) throws BaseException{
         try {
             return cartDao.cartMenusList(userId);
@@ -200,23 +175,7 @@ public class CartProvider {
             throw new BaseException(DATABASE_ERROR);
         }
     }
-//
-//    public int checkAccount(int userId, int accountId) throws BaseException{
-//        try {
-//            return cartDao.checkAccount(userId, accountId);
-//        } catch (Exception exception) {
-//            throw new BaseException(DATABASE_ERROR);
-//        }
-//    }
-//
-//    public int checkUsableCoupon(int userId, int couponId) throws BaseException{
-//        try {
-//            return cartDao.checkUsableCoupon(userId, couponId);
-//        } catch (Exception exception) {
-//            throw new BaseException(DATABASE_ERROR);
-//        }
-//    }
-//
+
     public int getStore(int userId) throws BaseException{
         try {
             return cartDao.getStore(userId);
