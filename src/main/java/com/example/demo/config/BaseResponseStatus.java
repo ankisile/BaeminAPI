@@ -71,10 +71,6 @@ public enum BaseResponseStatus {
     INVALID_CART_MENU_ID(false, 3024, "올바르지 않은 cartMenuId 입니다."),
 
     // [POST] /orders
-    INSUFFICIENT_BALANCE(false, 3025, "잔액이 부족합니다."),
-
-    INVALID_COUPON_ID(false, 3026, "사용 불가능한 쿠폰입니다."),
-    NOT_EXISTS_ACCOUNT_ID(false, 3027, "존재하지 않는 계좌입니다."),
     EMPTY_CARTS(false, 3028, "장바구니가 비어있습니다."),
 
     // [POST] /reviews
